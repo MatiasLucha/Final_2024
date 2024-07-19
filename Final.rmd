@@ -28,6 +28,11 @@ A new  preventative vaccine (covid921) is under test in clinical trials. Given t
 
 ## Males
 
+### Hypothesis and description
+$H_0$: Being a male is independent of effectiveness of the covid921 vaccine.
+
+$H_A$: The effectiveness of the covid921 vaccine is dependent of being a male.
+
 #### Graphical Descriptive Results
 ```{r}
 barchartGC(~infected + sex,data=FinalData)
@@ -51,6 +56,11 @@ fisher.test(table1)
 
 
 ## Females
+
+### Hypothesis and description
+$H_0$: Being a male is independent of effectiveness of the covid921 vaccine.
+
+$H_A$: The effectiveness of the covid921 vaccine is dependent of being a male.
 
 #### Graphical Descriptive Results
 ```{r}
@@ -76,6 +86,11 @@ fisher.test(table1)
 
 ## LGBTQ
 
+### Hypothesis and description
+$H_0$: Being a male is independent of effectiveness of the covid921 vaccine.
+
+$H_A$: The effectiveness of the covid921 vaccine is dependent of being a male.
+
 #### Graphical Descriptive Results
 ```{r}
 barchartGC(~infected + sex,data=FinalData)
@@ -100,6 +115,11 @@ fisher.test(table1)
 
 
 ## Druggies
+
+### Hypothesis and description
+$H_0$: Being a male is independent of effectiveness of the covid921 vaccine.
+
+$H_A$: The effectiveness of the covid921 vaccine is dependent of being a male.
 
 #### Graphical Descriptive Results
 ```{r}
