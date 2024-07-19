@@ -93,14 +93,14 @@ $H_A$: The effectiveness of the covid921 vaccine is dependent of being LGBTQ.
 
 #### Graphical Descriptive Results
 ```{r}
-barchartGC(~infected + sex,data=FinalData)
-barchartGC(~infected + sex,data=FinalData, type="percent")
+barchartGC(~infected + LGBTQ,data=FinalData)
+barchartGC(~infected + LGBTQ,data=FinalData, type="percent")
 
 ```
 
 #### Numerical Descriptive Results
 ```{r}
-table1 <- xtabs(~infected + sex, data=FinalData)
+table1 <- xtabs(~infected + LGBTQ, data=FinalData)
 rowPerc(table1)
 colPerc(table1)
 ```
@@ -123,14 +123,14 @@ $H_A$: The effectiveness of the covid921 vaccine is dependent of being a druggie
 
 #### Graphical Descriptive Results
 ```{r}
-barchartGC(~infected + sex,data=FinalData)
-barchartGC(~infected + sex,data=FinalData, type="percent")
+barchartGC(~infected + DrugUser,data=FinalData)
+barchartGC(~infected + DrugUser,data=FinalData, type="percent")
 
 ```
 
 #### Numerical Descriptive Results
 ```{r}
-table1 <- xtabs(~infected + sex, data=FinalData)
+table1 <- xtabs(~infected + DrugUser, data=FinalData)
 rowPerc(table1)
 colPerc(table1)
 ```
