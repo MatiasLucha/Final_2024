@@ -117,6 +117,7 @@ fisher.test(table1)
 ## Druggies
 
 ### Hypothesis and description
+
 $H_0$: Being a druggie is independent of effectiveness of the covid921 vaccine.
 
 $H_A$: The effectiveness of the covid921 vaccine is dependent of being a druggie
