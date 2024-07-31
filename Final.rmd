@@ -29,20 +29,28 @@ A new  preventative vaccine (covid921) is under test in clinical trials. Given t
 ## Males
 
 ### Hypothesis and description
-$H_0$: Being a male is independent of effectiveness of the covid921 vaccine.
+$H_0$: COVID921 vaccine is not effective in males.
 
-$H_A$: The effectiveness of the covid921 vaccine is dependent of being a male.
+$H_A$: COVID921 vaccine is effective in males.
+
+### Methods
+We will be using the helper file Cat~Cat
+Treatment is categorical
+Male is categorical
 
 #### Graphical Descriptive Results
 ```{r}
-barchartGC(~infected + sex,data=FinalData)
-barchartGC(~infected + sex,data=FinalData, type="percent")
+males=filter(FinalData, FinalData $ sex == "M")
+barchartGC(~treatment + infected,data=males)
+barchartGC(~infected + treatment,data=males, type="percent")
 
 ```
 
+The graphical results show that the perchantage of those who got the placebo were affecred greatly than those who got the vaccine with Covid19. While those with the placebo and compared to the vaccine that were okay were at the same value of about 50%. The vaccine has an affect on those affected as a male according to this chart. 
+
 #### Numerical Descriptive Results
 ```{r}
-table1 <- xtabs(~infected + sex, data=FinalData)
+table1 <- xtabs(~treatment + infected, data=males)
 rowPerc(table1)
 colPerc(table1)
 ```
