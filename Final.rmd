@@ -55,6 +55,8 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+The numerical data shows us that those with the placebo were affected by the virus far more than those who were given the vaccine. A comparitive value of 74% with the placebo to a small 26% with the vaccine.
+
 #### Inferential Results
 ```{r}
 chisq.test(table1)
