@@ -71,7 +71,7 @@ The p-values of the Fisher exam and the chi-square test are both 0.0000000000000
 ### Hypothesis and description
 $H_0$: Females are independent of effectiveness of the covid921 vaccine.
 
-$H_A$: The effectiveness of the covid921 vaccine is successful female.
+$H_A$: The effectiveness of the covid921 vaccine is successful for female.
 
 ### Methods
 We will be using the helper file Cat~Cat
@@ -109,23 +109,33 @@ The p-value for the Fisher test and the chi-square test are both below the value
 ## LGBTQ
 
 ### Hypothesis and description
-$H_0$: Being LGBTQ is independent of effectiveness of the covid921 vaccine.
+$H_0$: LGBTQ are independent of effectiveness of the covid921 vaccine.
 
-$H_A$: The effectiveness of the covid921 vaccine is dependent of being LGBTQ.
+$H_A$: The effectiveness of the covid921 vaccine is successful for LGBTQ
+
+### Methods
+We will be using the helper file Cat~Cat
+Treatment is categorical
+LGBTQ is categorical
 
 #### Graphical Descriptive Results
 ```{r}
-barchartGC(~infected + LGBTQ,data=FinalData)
-barchartGC(~infected + LGBTQ,data=FinalData, type="percent")
+LGBTQ=filter(FinalData, FinalData $ LGBTQ == "gay")
+barchartGC(~treatment + infected,data=LGBTQ)
+barchartGC(~infected + treatment,data=LGBTQ, type="percent")
 
 ```
+
+The graphical results show us that those from the LGBTQ community who are gay received either a placebo or a vaccine for the COVID19, and those with the placebo were highly more likely to get sick from COVID. About an 80 to 20 percent comparison between the both. While those with the vaccine were also more likely to be okay compared to those with the placebo.
 
 #### Numerical Descriptive Results
 ```{r}
-table1 <- xtabs(~infected + LGBTQ, data=FinalData)
+table1 <- xtabs(~treatment + infected, data=LGBTQ)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+The numerical results 
 
 #### Inferential Results
 ```{r}
