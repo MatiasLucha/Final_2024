@@ -90,10 +90,12 @@ The graphical results show us that females who got the placebo were more affecte
 
 #### Numerical Descriptive Results
 ```{r}
-table1 <- xtabs(~infected + sex, data=FinalData)
+table1 <- xtabs(~treatment + infected, data=females)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+Numerical results show us that women who received the vaccine were 35% likely to be infected while those receiving the placebo were 65% likely to get infected. As well as a small difference being more okay having received the vaccine at slightly above 50% whereas the placebo is slightly below 50%. Therefore, the covid921 vaccine is effective in preventing females from contacting COVID19.
 
 #### Inferential Results
 ```{r}
