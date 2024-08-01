@@ -153,21 +153,32 @@ The p-value for the Fisher test and the chi-square test are both below the value
 
 $H_0$: Being a druggie is independent of effectiveness of the covid921 vaccine.
 
-$H_A$: The effectiveness of the covid921 vaccine is dependent of being a druggie
+$H_A$: The effectiveness of the covid921 vaccine is successful on druggies.
+
+### Methods
+We will be using the helper file Cat~Cat
+Treatment is categorical
+DrugUser is categorical
 
 #### Graphical Descriptive Results
 ```{r}
-barchartGC(~infected + DrugUser,data=FinalData)
-barchartGC(~infected + DrugUser,data=FinalData, type="percent")
+druggies=filter(FinalData, FinalData $ DrugUser == "yes")
+barchartGC(~treatment + infected,data=druggies)
+barchartGC(~infected + treatment,data=druggies, type="percent")
 
 ```
+
+The grahpical results show us that DrugUsers who received the COVID921 vaccine are more susceptible to getting sick with COVID. While thsoe with the placebo are signifcantly less likely to get sick. Those with the placebo are also more likley to be okay compared to those with the vaccine. 
 
 #### Numerical Descriptive Results
 ```{r}
-table1 <- xtabs(~infected + DrugUser, data=FinalData)
+table1 <- xtabs(~treatment + infected, data=druggies)
 rowPerc(table1)
 colPerc(table1)
 ```
+
+The numerical results show us that DrugUsers witht he placebo are 8% likely to get infected, while those with the vaccine are 92% likely to get infected with COVID. Therefore, we fail to reject the null hypothesis and the COVID921 vaccination is unsuccessful for DrugUsers.
+
 
 #### Inferential Results
 ```{r}
@@ -176,5 +187,10 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+The p-value for the Fisher test and the chi-square test are both below the value of 0.05, therefore we reject the null hypothesis. The chi-square gives us 0.0000000001414, and the Fisher test gives us a value of 0.000000000003261 Both values are under 0.05, therefore, the COVID921 vaccine is effective on DrugUsers. Using the graphs however, we may view these effectiveness as a negative, since they seem to get more sick. 
+
 
 # Overall Results and Conclusions
+
+The Covid921 vaccine is affective for males, females, and gay members. The vaccine helps them in a positive manner, avoiding getting COVID when compared to having received the placebo. However, those who are DrugUsers get COVID more often with the vaccine compared to with the placebo, therefore, the vaccine makes a difference but causes a negative difference in users. 
+
