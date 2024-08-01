@@ -69,16 +69,24 @@ The p-values of the Fisher exam and the chi-square test are both 0.0000000000000
 ## Females
 
 ### Hypothesis and description
-$H_0$: Being a female is independent of effectiveness of the covid921 vaccine.
+$H_0$: Females are independent of effectiveness of the covid921 vaccine.
 
-$H_A$: The effectiveness of the covid921 vaccine is dependent of being a female.
+$H_A$: The effectiveness of the covid921 vaccine is successful female.
+
+### Methods
+We will be using the helper file Cat~Cat
+Treatment is categorical
+Female is categorical
 
 #### Graphical Descriptive Results
 ```{r}
-barchartGC(~infected + sex,data=FinalData)
-barchartGC(~infected + sex,data=FinalData, type="percent")
+females=filter(FinalData, FinalData $ sex == "F")
+barchartGC(~treatment + infected,data=females)
+barchartGC(~infected + treatment,data=females, type="percent")
 
 ```
+
+The graphical results show us that females who got the placebo were more affected dramatically by COVID19 than those who received the vaccine. While those who were okay were even statistically being either given the vaccine or placebo. 
 
 #### Numerical Descriptive Results
 ```{r}
