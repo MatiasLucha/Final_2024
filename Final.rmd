@@ -135,7 +135,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-The numerical results 
+The numerical results show us that LGBTQ members who are gay have a 80% chance of being infected with COVID19 than those with a 20% chance using the Covid921 vaccine. The vaccine is effective on those who are gay. 
 
 #### Inferential Results
 ```{r}
@@ -144,6 +144,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+The p-value for the Fisher test and the chi-square test are both below the value of 0.05, therefore we reject the null hypothesis. The chi-square gives us 0.000002266, and the Fisher test gives us a value of 0.000007269 Both values are under 0.05, therefore, the COVID921 vaccine is effective on gay members of the LGBTQ community With a 4.27 times chance of being affective in an odds ratio. 
 
 
 ## Druggies
