@@ -64,6 +64,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+The p-values of the Fisher exam and the chi-square test are both 0.00000000000000022. Therefore, the value is lower than 0.05. We therefore reject the null hypothesis, meaning the COVID921 vaccine is effective on males. The odds ratio are 2.82 more in favor of the vaccine over the placebo in males. 
 
 ## Females
 
